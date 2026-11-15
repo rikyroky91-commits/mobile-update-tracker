@@ -21,7 +21,7 @@ Honor, vivo, Android Enterprise Recommended, GSMArena…), resolves device ident
 - ♻️ Self-healing archive with external backup, safe on stateless hosting; offline test suite (network access is blocked in tests)
 
 ### Try it
-- **Hosted instance:** <https://android-updater.onrender.com> (sign-in required)
+- **Live site:** <https://mobileupdatetracker.duckdns.org> (search is open; the test fleet needs sign-in)
 - **Run locally:**
   ```bash
   pip install -r requirements-web.txt
