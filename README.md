@@ -1,4 +1,4 @@
-# 📱 M.U.T — Universal Mobile Update Tracker
+# 📱 M.U.T — Mobile Update Tracker
 
 ![Python](https://img.shields.io/badge/Python-FastAPI-009688) ![Tests](https://img.shields.io/badge/tests-pytest%2C%20offline-success) ![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF) ![Deploy](https://img.shields.io/badge/deploy-Docker%20%7C%20Render%20%7C%20Oracle-informational)
 
@@ -7,6 +7,8 @@
 Release notes are scattered across dozens of vendor pages, mirrors and news sites, and most of them only *announce*
 updates. M.U.T. aggregates **15+ sources** (Samsung FOTA, Apple, Pixel OTA, Xiaomi/HyperOS, Motorola, OPPO, realme,
 Honor, vivo, Android Enterprise Recommended, GSMArena…), resolves device identity, and separates hard facts from rumours.
+
+![Search result for Galaxy S24 Ultra: model code, SoC and last verified Android build](docs/screenshots/risultato-galaxy-s24-ultra.png)
 
 ### Highlights
 - 🔎 **One search box** for a marketing name ("Galaxy S24 Ultra"), a model code ("SM-S928B", "RMX3939") or a **15-digit IMEI** — auto-detected, checked against the archive and verified live in one click
@@ -28,9 +30,21 @@ Honor, vivo, Android Enterprise Recommended, GSMArena…), resolves device ident
   python -m pytest tests/ -q
   ```
 
+### Screenshots
+| Search | Latest updates feed |
+|---|---|
+| ![Home with the single search box](docs/screenshots/home.png) | ![Updates feed filtered by brand and period](docs/screenshots/novita.png) |
+
+<details><summary>Full result page with live news classification (Pixel 9 Pro)</summary>
+
+![Pixel 9 Pro result with beta, feature drop and security patch news](docs/screenshots/risultato-pixel-9-pro.png)
+</details>
+
 ### Also in this repo
 The shared game engine of **Page Brawl / [Parry Brawl Survivor](https://github.com/rikyroky91-commits/parry-brawl-survivor)**,
 shipped as a Chrome extension and an Android app.
+
+<img src="estensione/scheda/1-1-0/1-roguelike.png" width="49%"> <img src="estensione/scheda/1-1-0/3-armi.png" width="49%">
 
 ### Tech
 Python · FastAPI · Jinja · SQLite · web scraping & structured vendor APIs · Telegram Bot API · Docker · Render / Oracle Cloud · GitHub Actions (tests, nightly checks, deploy) — plus JavaScript, Chrome extension (MV3) and Android for Page Brawl
