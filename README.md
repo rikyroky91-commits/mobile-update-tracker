@@ -1,4 +1,53 @@
-# Universal Mobile Update Tracker
+# 📱 M.U.T — Universal Mobile Update Tracker
+
+![Python](https://img.shields.io/badge/Python-FastAPI-009688) ![Tests](https://img.shields.io/badge/tests-pytest%2C%20offline-success) ![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF) ![Deploy](https://img.shields.io/badge/deploy-Docker%20%7C%20Render%20%7C%20Oracle-informational)
+
+**Tells QA teams, for every phone model, which Android or iOS version actually landed and when, so they know exactly what to re-test.**
+
+Release notes are scattered across dozens of vendor pages, mirrors and news sites, and most of them only *announce*
+updates. M.U.T. aggregates **15+ sources** (Samsung FOTA, Apple, Pixel OTA, Xiaomi/HyperOS, Motorola, OPPO, realme,
+Honor, vivo, Android Enterprise Recommended, GSMArena…), resolves device identity, and separates hard facts from rumours.
+
+### Highlights
+- 🔎 **One search box** for a marketing name ("Galaxy S24 Ultra"), a model code ("SM-S928B", "RMX3939") or a **15-digit IMEI** — auto-detected, checked against the archive and verified live in one click
+- 🧬 **Device identity resolution** across 4,300+ models (Samsung and Pixel 100% consistent name ↔ code), including SoC variants that share a name
+- 🧾 **Data honesty by design**: *current version*, *factory version* and *news hint* are never mixed up
+- 🧪 **"What changed since I last tested"**: snapshot a device fleet, then get a per-model verdict — full retest (OS jump), smoke test (new build) or patch-only
+- 🔔 **Telegram alerts** for every update hitting your test fleet; size-based QA traffic light (>500 MB = full retest)
+- 🧹 **Scored noise filter** that penalises future-tense announcements and demands proof of rollout (build number, patch level)
+- 🩺 Diagnostics: per-source health over time, discarded items with reasons, step-by-step replay of any search
+- ♻️ Self-healing archive with external backup, safe on stateless hosting; offline test suite (network access is blocked in tests)
+
+### Try it
+- **Hosted instance:** <https://android-updater.onrender.com> (sign-in required)
+- **Run locally:**
+  ```bash
+  pip install -r requirements-web.txt
+  uvicorn web.main:app --reload      # http://127.0.0.1:8000
+  python worker.py --once            # one scan
+  python -m pytest tests/ -q
+  ```
+
+### Also in this repo
+The shared game engine of **Page Brawl / [Parry Brawl Survivor](https://github.com/rikyroky91-commits/parry-brawl-survivor)**,
+shipped as a Chrome extension and an Android app.
+
+### Tech
+Python · FastAPI · Jinja · SQLite · web scraping & structured vendor APIs · Telegram Bot API · Docker · Render / Oracle Cloud · GitHub Actions (tests, nightly checks, deploy) — plus JavaScript, Chrome extension (MV3) and Android for Page Brawl
+
+---
+
+## 🇮🇹 In breve
+
+Monitora i rilasci software reali (major release, feature drop, patch di sicurezza) di oltre 15 fonti Android e iOS,
+e dice **per ogni modello di telefono** quale versione è arrivata e quando, così il QA sa su cosa rilanciare i test.
+Ricerca per nome, codice modello o IMEI, notifiche Telegram sul parco di test, filtro anti-rumore. Sotto la
+documentazione tecnica completa.
+
+---
+
+## Documentazione tecnica
+
 
 > **Chi arriva adesso parta da [PASSAGGIO-CONSEGNE.md](PASSAGGIO-CONSEGNE.md)**: stato attuale, regole,
 > build e deploy sia del tracker sia di Page Brawl, tenuto aggiornato a ogni giro.
